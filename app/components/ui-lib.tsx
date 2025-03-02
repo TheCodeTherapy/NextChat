@@ -555,7 +555,7 @@ export function Selector<T>(props: {
 export function FullScreen(props: any) {
   const { children, right = 10, top = 10, ...rest } = props;
   const ref = useRef<HTMLDivElement>();
-  const [fullScreen, setFullScreen] = useState(false);
+  const [fullScreen, setFullScreen] = useState(true);
   const toggleFullscreen = useCallback(() => {
     if (!document.fullscreenElement) {
       ref.current?.requestFullscreen();

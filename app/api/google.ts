@@ -96,7 +96,20 @@ async function request(req: NextRequest, apiKey: string) {
     req?.nextUrl?.searchParams?.get("alt") === "sse" ? "?alt=sse" : ""
   }`;
 
-  console.log("[Fetch Url] ", fetchUrl);
+  const visibleChars = Math.min(7, apiKey.length);
+  const maskedApiKey = apiKey
+    ? apiKey.slice(0, visibleChars) +
+      "..." +
+      apiKey.slice(apiKey.length - visibleChars, apiKey.length)
+    : "";
+  const maskedFetchUrl = `${baseUrl}${path}?key=${maskedApiKey}${
+    req?.nextUrl?.searchParams?.get("alt") === "sse" ? "&alt=sse" : ""
+  }`;
+
+  // timestamp as YYYY-MM-DD HH:MM:SS
+  const timeStamp = new Date().toISOString().replace("T", " ").replace("Z", "");
+
+  console.log(`[Fetch Url ${timeStamp}] `, maskedFetchUrl);
   const fetchOptions: RequestInit = {
     headers: {
       "Content-Type": "application/json",

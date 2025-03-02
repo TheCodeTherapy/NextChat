@@ -5,14 +5,13 @@ import "./styles/highlight.scss";
 import { getClientConfig } from "./config/client";
 import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 import { getServerSideConfig } from "./config/server";
 
 export const metadata: Metadata = {
-  title: "NextChat",
+  title: "LLM Chat",
   description: "Your personal ChatGPT Chat Bot.",
   appleWebApp: {
-    title: "NextChat",
+    title: "LLM Chat",
     statusBarStyle: "default",
   },
 };
@@ -57,14 +56,10 @@ export default function RootLayout({
           </>
         )}
         {serverConfig?.gtmId && (
-          <>
-            <GoogleTagManager gtmId={serverConfig.gtmId} />
-          </>
+          <>{/* <GoogleTagManager gtmId={serverConfig.gtmId} /> */}</>
         )}
         {serverConfig?.gaId && (
-          <>
-            <GoogleAnalytics gaId={serverConfig.gaId} />
-          </>
+          <>{/* <GoogleAnalytics gaId={serverConfig.gaId} /> */}</>
         )}
       </body>
     </html>

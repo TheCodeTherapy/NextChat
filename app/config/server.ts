@@ -114,11 +114,18 @@ function getApiKey(keys?: string) {
   const apiKeys = apiKeyEnvVar.split(",").map((v) => v.trim());
   const randomIndex = Math.floor(Math.random() * apiKeys.length);
   const apiKey = apiKeys[randomIndex];
+
+  const visibleChars = Math.min(7, apiKey.length);
+  const maskedApiKey = apiKey
+    ? apiKey.slice(0, visibleChars) +
+      "..." +
+      apiKey.slice(apiKey.length - visibleChars, apiKey.length)
+    : "";
   if (apiKey) {
     console.log(
       `[Server Config] using ${randomIndex + 1} of ${
         apiKeys.length
-      } api key - ${apiKey}`,
+      } api key - ${maskedApiKey}`,
     );
   }
 
