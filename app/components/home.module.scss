@@ -1,13 +1,13 @@
 @mixin container {
   background-color: var(--white);
   border: var(--border-in-light);
-  border-radius: 20px;
+  border-radius: 7px;
   box-shadow: var(--shadow);
   color: var(--black);
   background-color: var(--white);
   min-width: 600px;
   min-height: 370px;
-  max-width: 1200px;
+  // max-width: 1600px;
 
   display: flex;
   overflow: hidden;
@@ -43,6 +43,7 @@
   box-sizing: border-box;
   padding: 20px;
   background-color: var(--second);
+  // background: linear-gradient(to right, var(--gradient-light), var(--gradient-dark));
   display: flex;
   flex-direction: column;
   box-shadow: inset -2px 0px 2px 0px rgb(0, 0, 0, 0.05);
@@ -96,6 +97,7 @@
 
 .window-content {
   width: var(--window-content-width);
+  // background: linear-gradient(to left, var(--gradient-light), var(--gradient-dark));
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -135,7 +137,7 @@
 
 .sidebar-header {
   position: relative;
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -195,7 +197,7 @@
 }
 
 .chat-item-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bolder;
   display: block;
   width: calc(100% - 15px);

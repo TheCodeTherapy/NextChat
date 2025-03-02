@@ -178,7 +178,7 @@ function getOrCreateMeasureDom(id: string, init?: (dom: HTMLElement) => void) {
     dom = document.createElement("span");
     dom.style.position = "absolute";
     dom.style.wordBreak = "break-word";
-    dom.style.fontSize = "14px";
+    dom.style.fontSize = "16px";
     dom.style.transform = "translateY(-200vh)";
     dom.style.pointerEvents = "none";
     dom.style.opacity = "0";
@@ -256,9 +256,7 @@ export function getMessageImages(message: RequestMessage): string[] {
 
 export function isVisionModel(model: string) {
   const visionModels = useAccessStore.getState().visionModels;
-  const envVisionModels = visionModels
-    ?.split(",")
-    .map((m) => m.trim());
+  const envVisionModels = visionModels?.split(",").map((m) => m.trim());
   if (envVisionModels?.includes(model)) {
     return true;
   }

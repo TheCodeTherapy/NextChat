@@ -96,7 +96,7 @@
   margin: 0;
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
-  font-size: 14px;
+  font-size: 16px !important;
   line-height: 1.5;
   word-wrap: break-word;
 }
@@ -250,6 +250,7 @@
 .markdown-body [type="button"],
 .markdown-body [type="reset"],
 .markdown-body [type="submit"] {
+  appearance: button;
   -webkit-appearance: button;
 }
 
@@ -812,7 +813,7 @@
 }
 
 .markdown-body samp {
-  font-size: 85%;
+  font-size: inherit;
 }
 
 .markdown-body pre code {
@@ -841,7 +842,7 @@
 .markdown-body pre {
   padding: 16px 16px 8px 16px;
   overflow: auto;
-  font-size: 85%;
+  font-size: inherit;
   line-height: 1.45;
   border-radius: 6px;
   direction: ltr;

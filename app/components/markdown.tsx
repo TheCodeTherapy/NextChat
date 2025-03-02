@@ -128,7 +128,7 @@ export function PreCode(props: { children: any }) {
       });
       setTimeout(renderArtifacts, 1);
     }
-  }, []);
+  }, [renderArtifacts]);
 
   return (
     <>
@@ -181,7 +181,7 @@ function CustomCode(props: { children: any; className?: string }) {
     session.mask?.enableCodeFold !== false && config.enableCodeFold;
 
   const ref = useRef<HTMLPreElement>(null);
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
 
   useEffect(() => {
